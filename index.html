@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Odin Library Website</title>
+    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<main>
+    <h1 class="heading">Library Website</h1>
+    <p>
+        This website is a book tracker for readers. You can add books to your
+        list and mark them as read to keep track of your progress. It helps you
+        visualize your reading journey and see what books you've finished!
+    </p>
+    <button
+            id="openDialogBtn"
+            class="btn btn-primary"
+    >
+        Add Book
+    </button>
+    <dialog id="dialog" aria-labelledby="dialog_heading">
+        <h2 id="dialog_heading" class="h2">Add a Book</h2>
+        <form method="dialog" id="form-id">
+            <div class="form-label">
+                <label>
+                    Author:
+                <input type="text" class="form-input" id="author-input"/>
+                </label>
+            </div>
+            <div class="form-label">
+                <label>
+                    Title:
+                    <input type="text" class="form-input" id="title-input"/>
+                </label>
+            </div>
+            <div class="form-label">
+                <label>
+                    Number of Pages:
+                    <input type="number" class="form-input" id="pages-number"/>
+                </label>
+            </div>
+            <div class="form-label">
+                <label>
+                    Have you read the book?
+                    <!-- Rounded switch -->
+                    <span class="switch">
+                        <input type="checkbox" class="form-input switch" id="is-read"/>
+                        <span class="slider round"></span>
+                    </span>
+                </label>
+            </div>
+            <div class="flex-right">
+                <button class="btn btn-primary" type="submit" id="submit-btn">
+                    Submit
+                </button>
+                <button class="btn btn-danger" type="reset">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <h2 class="h2">All Books</h2>
+
+    <div class="card-container" id="card-container">
+    </div>
+    <script src="book.js"></script>
+    <script src="index.js"></script>
+</main>
+</body>
+</html>
